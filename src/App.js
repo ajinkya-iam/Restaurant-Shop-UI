@@ -1,9 +1,12 @@
+import HeroSection from "./components/HeroSection";
+import Navbar from "./components/Navbar";
 
 
 function App() {
   return (
-    <div className="bg-sky-300">
-     
+    <div>
+        <Navbar/>
+        <HeroSection/>
     </div>
   );
 }
