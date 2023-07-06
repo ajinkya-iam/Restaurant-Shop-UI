@@ -1,44 +1,33 @@
 import React, { useState } from 'react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import logo from "../images/logo.png"
+import search from "../images/search.png"
+import basket from "../images/basket.png"
+import person from "../images/person.png"
 
 const Navbar = () => {
-
-    const [openMenu, setOpenMenu] = useState(false)
-
     return (
-        <>
-            <div className='flex w-full max-w-[1080px] h-[96px] mx-auto justify-between items-center'>
-                <h1 className='ml-4 font-sans font-semibold text-slate-900 text-xl underline'>yannal</h1>
-                <ul className='hidden md:flex space-x-10 items-center'>
-                    <li className='font-sans font-medium text-slate-600 hover:underline hover:underline-offset-2 hover:text-red-600'>about us</li>
-                    <li className='font-sans font-medium text-slate-600 hover:underline hover:underline-offset-2 hover:text-red-600'>menu</li>
-                    <li className='font-sans font-medium text-slate-600 hover:underline hover:underline-offset-2 hover:text-red-600'>our specials</li>
-                    <li className='font-sans font-medium text-slate-600 hover:underline hover:underline-offset-2 hover:text-red-600'>our locations</li>
-                    <li className='font-sans font-medium text-slate-600 hover:underline hover:underline-offset-2 hover:text-red-600'>our clients</li>
-                    <li className='font-sans font-medium text-slate-600 hover:underline hover:underline-offset-2 hover:text-red-600'>login</li>
-                </ul>
-                <div onClick={()=>setOpenMenu(!openMenu)} className="block md:hidden mr-6">
-                    {openMenu ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        <div className='sticky top-0 flex w-full max-w-[1080px] h-[96px] mx-auto justify-between items-center'>
+            <img src={logo} className='w-[113px] h-[33px] object-contain cursor-pointer' />
+            <ul className='flex items-center space-x-8'>
+                <div className='pb-1 hover:border-b-[3px] hover:border-red-500 cursor-pointer'><li className='font-sans font-medium text-slate-600 leading-6'>menu</li></div>
+                <div className='pb-1 hover:border-b-[3px] hover:border-red-500 cursor-pointer'><li className='font-sans font-medium text-slate-600 leading-6'>about us</li></div>
+                <div className='pb-1 hover:border-b-[3px] hover:border-red-500 cursor-pointer'><li className='font-sans font-medium text-slate-600 leading-6'>our specials</li></div>
+                <div className='pb-1 hover:border-b-[3px] hover:border-red-500 cursor-pointer'><li className='font-sans font-medium text-slate-600 leading-6'>our locations</li></div>
+                <div className='pb-1 hover:border-b-[3px] hover:border-red-500 cursor-pointer'><li className='font-sans font-medium text-slate-600 leading-6'>our cheffs</li></div>
+            </ul>
+            <div className='flex space-x-6'>
+                <div className='p-2 hover:bg-slate-100 rounded-md cursor-pointer'>
+                    <img src={search} className='w-6 h-6' />
                 </div>
-                {
-                    openMenu && (
-                        <div className='fixed w-[60%] bg-white top-10 '>
-                            <h1 className='ml-4 font-sans font-semibold text-slate-900 underline'>yannal</h1>
-                            <ul className='ml-4 mt-4 space-y-4'>
-                                <li className='font-sans font-medium text-slate-600 border-b-[0.3px] border-gray-400'>about us</li>
-                                <li className='font-sans font-medium text-slate-600 border-b-[0.3px] border-gray-400'>menu</li>
-                                <li className='font-sans font-medium text-slate-600 border-b-[0.3px] border-gray-400'>our specials</li>
-                                <li className='font-sans font-medium text-slate-600 border-b-[0.3px] border-gray-400'>our locations</li>
-                                <li className='font-sans font-medium text-slate-600 border-b-[0.3px] border-gray-400'>our clients</li>
-                                <li className='font-sans font-medium text-slate-600 border-b-[0.3px] border-gray-400'>login</li>
-                            </ul>
-                        </div>
-                    )
-                }
+                <div className='p-2 hover:bg-slate-100 rounded-md cursor-pointer'>
+                    <img src={basket} className='w-6 h-6' />
+                </div>
+                <div className='p-2 hover:bg-slate-100 rounded-md cursor-pointer'>
+                    <img src={person} className='w-6 h-6' />
+                </div>
             </div>
-
-
-        </>
+        </div>
     )
 }
 
